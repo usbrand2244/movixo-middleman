@@ -6,37 +6,19 @@
     <title>Middleman Sandbox</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { 
-            width: 100%; 
-            height: 100%; 
-            overflow: hidden; 
-            background: #000; 
-        }
+        html, body { width: 100%; height: 100%; overflow: hidden; background: #000; }
         iframe { 
-            width: 100%; 
-            height: 100%; 
-            border: none; 
-            display: block; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            background: #000;
+            width: 100%; height: 100%; border: none; display: block; position: absolute; top: 0; left: 0; background: #000;
         }
     </style>
 </head>
 <body>
     <script>
-        // Get the URL parameters (e.g., ?type=movie&id=1440098)
         const params = window.location.search;
-        
-        // Point to your Player repo
         const playerUrl = 'https://movixohub-player.vercel.app/' + params;
         
-        // Create the iframe dynamically
         const iframe = document.createElement('iframe');
         iframe.src = playerUrl;
-        
-        // Permissions for video playback and fullscreen
         iframe.allow = "autoplay; fullscreen; encrypted-media; picture-in-picture";
         iframe.allowFullscreen = true;
         
